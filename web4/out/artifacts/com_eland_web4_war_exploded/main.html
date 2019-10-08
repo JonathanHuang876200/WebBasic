@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>Main Page</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.cookie.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+<form name="form1" action="main.html">
+    <!--    <textarea id="test" name="test"></textarea>-->
+    mtext <input id="mtext" type="text" class="mtext" name="mtext"><br>
+    mselect <select name="mselect" id="mselect">
+    <option value="SelectValue1">Value 1</option>
+    <option value="SelectValue2">Value 2</option>
+    <option value="selectValue3">Value 3</option>
+</select>
+    <div id="result"></div>
+    <table border="1" width="60%">
+        <tr>
+            <td>
+                mlcheckbox <input type="checkbox" name="mlcheckbox"><br>
+                mlcheckbox <input type="checkbox" name="mlcheckbox"><br>
+                mlcheckbox <input type="checkbox" name="mlcheckbox"><br>
+            </td>
+            <td>
+                mrcheckbox <input type="checkbox" name="mrcheckbox">
+            </td>
+        </tr>
+    </table>
+    <input id="button1" type="button" name="button1" value="button1">
+    <input id="button2" type="button" name="button2" value="button2">
+    <input onClick="window.open(href='http://localhost:8888/com_eland_web4_war_exploded/popupView.html','新視窗名字','width=350,height=350,toolbar=yes, status=yes, menubar=no, resizable=yes, scrollbars=yes');"
+           type="button" name="button3" value="button3">
+    <input id="submit" type="submit" name="submit" value="submit">
+    <script>
+        $(function () {
+            $("#button1").click(function () {
+                $('[name="mlcheckbox"]').prop("checked", true);
+                var result = $("input[type='checkbox']:checked").length;
+                alert(result);
+            });
+            $("#button2").click(function () {
+                $('[name="mlcheckbox"]').prop("checked", false);
+                $('[name="mrcheckbox"]').prop("checked", true);
+                var result = $("input[type='checkbox']:checked").length;
+                alert(result);
+            });
+            $('#mselect').change(function () {
+                $('#mtext').prop('value', $('#mselect').val())
+            });
+            $("#submit").click(function () {
+                if ($("#mtext").val() == "") {
+                    alert("欄位不可空白");
+                    event.preventDefault();
+                } else {
+
+                }
+            });
+        })
+
+        // $('#button').click(function () {
+        //     var value = $("#ptext").val();
+        //     $('#mselect').append('<option value=' + value + '>' + value + '</option>')
+        // });
+        // $("#mselect").change(function () {
+        // var cookieValue = document.cookie;
+        // $('#mselect').append('<option value=' + cookieValue + '>' + cookieValue + '</option>');
+        // })
+        // function put() {
+        //     var hidden = document.getElementById("hide").value;
+        //     $('#mselect').append('<option value=' + hidden + '>' + hidden + '</option>');
+        // }
+
+        // window.onload = function () {
+        // var getValue = sessionStorage.getItem("inputKey");
+        // var urlString = (window.location.href).toLocaleLowerCase();
+        // var url = new URL(urlString);
+        // var value = url.searchParams.get("account");
+
+        // window.close();
+        // var param = $.cookie("a");
+        // console.log(param);
+        // }
+
+
+        // var form = document.getElementById("fm");
+        // form.onsubmit = function (e) {
+        //     e.preventDefault();
+        //     console.log(form.ptext.value);
+        // }
+
+    </script>
+</form>
+</body>
+</html>

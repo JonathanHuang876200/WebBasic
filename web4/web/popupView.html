@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Popup View</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+
+        function send() {
+            var firstName = document.getElementById("ptext").value;
+            if (document.getElementById("ptext").value == "") {
+                alert("請輸入值");
+                document.getElementById("ptext").focus();
+            } else {
+                // window.opener.document.getElementById("mselect").value = firstName;
+                var newOpt=window.opener.document.createElement("option");
+                newOpt.value = firstName+"Value";
+                newOpt.text = firstName;
+                window.opener.document.form1.mselect.options.add(newOpt);
+                window.close();
+
+                // var newOption = new Option("Option text","Option value");
+                // mselect.appendChild(newOption);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+<form name="formSend">
+    ptext <input type="text" name="ptext" id="ptext"> <br>
+    <input id="buttonSend" type="button" name="buttonSend" value="Button4" onclick="send()">
+</form>
+
+
+
+</body>
+</html>
+
+

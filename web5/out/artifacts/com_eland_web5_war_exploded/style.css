@@ -1,0 +1,34 @@
+table {
+    font-size: 10pt;
+    line-height: 25px;
+    font-family: 新細明體;
+    color: #2F4F4F;
+    /*border-width: 1pt;*/
+    border: #C0C0C0 1pt solid;
+}
+
+h3 {
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #2F4F4F;
+}
+
+a:link {
+    color: #0000FF;
+}
+
+a:visited {
+    color: #D2691E;
+}
+
+a:hover {
+    color: #FA8072;
+    font-weight: bold;
+    background-color: #FFF8DC;
+}
+
+input {
+    background-color: #4682B4;
+    color: white;
+}
